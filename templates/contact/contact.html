@@ -8,12 +8,14 @@
     <h1>Contact Us</h1>
 
      <h3 style="color: red">{{ error_message }}</h3>
+
+ <div class="input-group">
     <form action="{% url 'contact' %}" method="post">
     {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Add">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">Send</button>
     </form>
-
+ </div>
 
 
 {% endblock %}
